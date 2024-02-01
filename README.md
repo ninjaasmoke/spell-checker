@@ -14,7 +14,9 @@
       - [Iterative Development Approach:](#iterative-development-approach)
 
 ### Introduction
-This C++ project implements a spell checker using the strategy pattern. The spell checker reads a sample text file, identifies misspelled words, and provides suggestions for corrections. The strategy pattern allows for easy integration of different spell-checking algorithms, starting with a Levenshtein distance-based strategy. Additionally, a custom logger highlights incorrect words in the console output for improved visibility during the spell-checking process. The project is organized into modular components, promoting code readability, extensibility, and maintainability.
+Ever wondered how spell checkers work?
+
+I actually found them quite fascinating, so I decided to build one myself. This project is a spell checker implemented in C++ using the strategy pattern. The spell checker reads a sample text file, identifies misspelled words, [TODO: and provides suggestions for corrections]. The strategy pattern allows for easy integration of different spell-checking algorithms, starting with a Levenshtein distance-based strategy.
 
 ### Exec commands
 
