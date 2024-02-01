@@ -8,6 +8,7 @@
 #include <string>
 
 #include "./include/file_io.h"
+#include "./include/spell_check_strategy.h"
 #include "./include/levenshtein_spell_checker.h"
 
 // Function to convert a string to lowercase
@@ -28,8 +29,9 @@ int main()
     // Read dictionary into a vector for lookup
     std::vector<std::string> dictionary = FileIO::readLines(dictionaryFile);
 
-    // Instantiate the Levenshtein spell checker
-    LevenshteinSpellChecker spellChecker;
+    // Instantiate the Levenshtein spell checker (initial strategy)
+    LevenshteinSpellChecker levenshteinSpellChecker;
+    SpellCheckStrategy *currentStrategy = &levenshteinSpellChecker;
 
     // Read lines from the input file
     std::vector<std::string> lines = FileIO::readLines(inputFile);
@@ -49,11 +51,12 @@ int main()
 
             // Convert both cleaned word and dictionary words to lowercase
             std::string cleanedLower = toLowercase(cleanedWord);
+            std::transform(dictionary.begin(), dictionary.end(), dictionary.begin(), ::toLowercase);
 
-            // Check if the word is spelled correctly
-            if (!spellChecker.isSpelledCorrectly(cleanedLower, dictionary, 0))
+            // Check if the word is spelled correctly using the current strategy
+            if (!currentStrategy->isSpelledCorrectly(cleanedLower, dictionary, 0))
             {
-                // Implement suggestions for corrections here
+                // Implement suggestions for corrections here: TODO
                 // Now, just marking the incorrect word with square brackets
                 word = "[" + word + "]";
             }
