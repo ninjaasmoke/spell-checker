@@ -52,6 +52,8 @@ g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 
 ### Levenshtein Distance
 ```bash
+# file io
+spell-checker> ./spell_checker
 Spell-checking complete. Corrected file written to: fixed.txt
 Runtime: 15870561 microseconds
 ```
@@ -78,6 +80,7 @@ I savor a [watermellon's] whisper and a [kiwii's] sweet refrain.
 ```
 
 ```bash
+# string io
 spell-checker> ./spell_checker "In twilight's glow, I adore applle's embrace and banaanas' dance. Oranges, a symphony of sunsets, are greaet! Grapes, peears, and cheries waltz in a delicious duet. Lemons and limmes serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite fruiits. I savor a watermellon's whisper and a kiwii's sweet refrain."
 
 Corrected string: In twilight's glow, I adore [applle's] embrace and [banaanas'] dance. Oranges, a symphony of sunsets, are [greaet!] Grapes, [peears,] and cheries waltz in a delicious duet. Lemons and [limmes] serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite [fruiits.] I savor a [watermellon's] whisper and a [kiwii's] sweet refrain.
