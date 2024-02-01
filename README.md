@@ -1,12 +1,13 @@
 # Spell Checker
 
-### Table of Contents
+## Table of Contents
 - [Spell Checker](#spell-checker)
-    - [Table of Contents](#table-of-contents)
-    - [Introduction](#introduction)
-    - [Exec commands](#exec-commands)
-    - [Outputs](#outputs)
-    - [Learnings](#learnings)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Exec commands](#exec-commands)
+  - [Outputs](#outputs)
+    - [Levenshtein Distance](#levenshtein-distance)
+  - [Learnings](#learnings)
       - [Understanding Strategy Pattern:](#understanding-strategy-pattern)
       - [Flexible Design with Patterns:](#flexible-design-with-patterns)
       - [Implementation of Custom Logger:](#implementation-of-custom-logger)
@@ -14,12 +15,12 @@
       - [Practical C++ Application:](#practical-c-application)
       - [Iterative Development Approach:](#iterative-development-approach)
 
-### Introduction
+## Introduction
 Ever wondered how spell checkers work?
 
 I actually found them quite fascinating, so I decided to build one myself. This project is a spell checker implemented in C++ using the strategy pattern. The spell checker reads a sample text file, identifies misspelled words, [TODO: and provides suggestions for corrections]. The strategy pattern allows for easy integration of different spell-checking algorithms, starting with a Levenshtein distance-based strategy.
 
-### Exec commands
+## Exec commands
 
 ```bash
 # compile the spell checker
@@ -47,8 +48,9 @@ g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 ```
 
 
-### Outputs
+## Outputs
 
+### Levenshtein Distance
 ```bash
 Spell-checking complete. Corrected file written to: fixed.txt
 Runtime: 15870561 microseconds
@@ -77,12 +79,13 @@ I savor a [watermellon's] whisper and a [kiwii's] sweet refrain.
 
 ```bash
 spell-checker> ./spell_checker "In twilight's glow, I adore applle's embrace and banaanas' dance. Oranges, a symphony of sunsets, are greaet! Grapes, peears, and cheries waltz in a delicious duet. Lemons and limmes serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite fruiits. I savor a watermellon's whisper and a kiwii's sweet refrain."
-Corrected string: In twilight's glow, I adore [applle's] embrace and [banaanas'] dance. Oranges, a symphony of sunsets, are [greaet!] Grapes, [peears,] and cheries waltz in a delicious duet. Lemons and [limmes] serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite [fruiits.] I savor a [watermellon's] whisper and a [kiwii's] sweet refrain. 
 
-Runtime: 19224094 microseconds
+Corrected string: In twilight's glow, I adore [applle's] embrace and [banaanas'] dance. Oranges, a symphony of sunsets, are [greaet!] Grapes, [peears,] and cheries waltz in a delicious duet. Lemons and [limmes] serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite [fruiits.] I savor a [watermellon's] whisper and a [kiwii's] sweet refrain.
+
+Runtime: 15533753 microseconds
 ```
 
-### Learnings
+## Learnings
 
 #### Understanding Strategy Pattern:
 
