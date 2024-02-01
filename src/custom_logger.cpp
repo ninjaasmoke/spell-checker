@@ -5,29 +5,16 @@
 
 void CustomLogger::log(const std::string &message)
 {
-    std::cout << message << std::endl;
+    std::cout << message << " ";
 }
 
 void CustomLogger::logHighlighted(const std::string &message)
 {
-    std::string highlightedMessage = "";
-    bool inBracket = false;
+    std::cout << "\033[1;31m" << message << "\033[0m"
+              << " ";
+}
 
-    for (char c : message)
-    {
-        if (c == '[')
-        {
-            inBracket = true;
-            highlightedMessage += "\033[1;31m"; // ANSI escape code for red text
-        }
-        else if (c == ']')
-        {
-            inBracket = false;
-            highlightedMessage += "\033[0m"; // ANSI escape code to reset text color
-        }
-
-        highlightedMessage += c;
-    }
-
-    std::cout << highlightedMessage << std::endl;
+void CustomLogger::logNewLine()
+{
+    std::cout << std::endl;
 }

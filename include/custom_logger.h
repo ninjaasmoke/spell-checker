@@ -14,6 +14,7 @@ class CustomLogger
 public:
     static void log(const std::string &message);
     static void logHighlighted(const std::string &message);
+    static void logNewLine();
 };
 
 #endif // CUSTOM_LOGGER_H
