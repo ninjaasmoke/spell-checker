@@ -6,11 +6,12 @@
 
 #pragma once
 #include <string>
+#include <vector>
 
 class SpellCheckStrategy
 {
 public:
-    virtual bool isSpelledCorrectly(const std::string &word) const = 0;
+    virtual bool isSpelledCorrectly(const std::string &word, const std::vector<std::string> &dictionary, int threshold) const = 0;
     virtual ~SpellCheckStrategy() = default;
 };
 

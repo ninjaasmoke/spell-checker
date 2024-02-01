@@ -4,8 +4,16 @@
 #include "../include/levenshtein_spell_checker.h"
 #include "../include/levenshtein.h"
 
-bool LevenshteinSpellChecker::isSpelledCorrectly(const std::string &word) const
+bool LevenshteinSpellChecker::isSpelledCorrectly(const std::string &word, const std::vector<std::string> &dictionary, int threshold) const
 {
     LevenshteinDistance levenshtein;
-    return levenshtein.calculate(word, "example") == 0;
+    for (auto &dictWord : dictionary)
+    {
+        if (levenshtein.calculate(word, dictWord) <= threshold)
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
