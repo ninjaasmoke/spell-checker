@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     auto start = std::chrono::high_resolution_clock::now();
 
     // Default file paths
-    const std::string defaultDictionaryFile = "data/dictionary.txt";
+    const std::string defaultDictionaryFile = "data/words.txt";
     const std::string defaultInputFile = "data/sample.txt";
     const std::string defaultOutputFile = "fixed.txt";
 
