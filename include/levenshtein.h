@@ -4,7 +4,12 @@
 #ifndef LEVENSHTEIN_H
 #define LEVENSHTEIN_H
 
+#pragma once
+
 #include <string>
-int calculateLevenshteinDistance(const std::string& str1, const std::string& str2);
+class LevenshteinDistance {
+public:
+    static int calculate(const std::string& s1, const std::string& s2);
+};
 
 #endif // LEVENSHTEIN_H
