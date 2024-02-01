@@ -75,6 +75,13 @@ I savor a [watermellon's] whisper and a [kiwii's] sweet refrain.
 
 ```
 
+```bash
+spell-checker> ./spell_checker "In twilight's glow, I adore applle's embrace and banaanas' dance. Oranges, a symphony of sunsets, are greaet! Grapes, peears, and cheries waltz in a delicious duet. Lemons and limmes serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite fruiits. I savor a watermellon's whisper and a kiwii's sweet refrain."
+Corrected string: In twilight's glow, I adore [applle's] embrace and [banaanas'] dance. Oranges, a symphony of sunsets, are [greaet!] Grapes, [peears,] and cheries waltz in a delicious duet. Lemons and [limmes] serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite [fruiits.] I savor a [watermellon's] whisper and a [kiwii's] sweet refrain. 
+
+Runtime: 19224094 microseconds
+```
+
 ### Learnings
 
 #### Understanding Strategy Pattern:

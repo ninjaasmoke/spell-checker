@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
             correctedString += word + ' ';
         }
 
-        std::cout << "Corrected string: " << correctedString << std::endl;
+        std::cout << "\nCorrected string: " << correctedString << std::endl;
     }
     else
     {
