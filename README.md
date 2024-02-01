@@ -32,16 +32,21 @@ g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 ```
 
 ```bash
-# TODO
 # run the spell checker with a file
-./spell_checker <file>
+./spell_checker <input_file>
 ```
 
 ```bash
-# TODO
 # run the spell checker with a file and output the result to a file
-./spell_checker <file> > <output_file>
+./spell_checker <input_file> > <output_file>
 ```
+
+```bash
+# run the spell checker with a string
+./spell_checker "In twilight's glow, I adore applle's embrace and banaanas' dance. Oranges, a symphony of sunsets, are greaet! Grapes, peears, and cheries waltz in a delicious duet. Lemons and limmes serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite fruiits. I savor a watermellon's whisper and a kiwii's sweet refrain."
+```
+
+
 ### Outputs
 
 ```bash
