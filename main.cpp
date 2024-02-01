@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 #include "./include/file_io.h"
 #include "./include/spell_check_strategy.h"
@@ -19,8 +20,16 @@ std::string toLowercase(const std::string &s)
     return result;
 }
 
+/**
+ * @brief Main function to demonstrate the spell checker using the strategy pattern
+ */
 int main()
 {
+    /*
+    Start the timer
+    */
+    auto start = std::chrono::high_resolution_clock::now();
+
     // File paths
     const std::string dictionaryFile = "data/dictionary.txt";
     const std::string inputFile = "data/sample.txt";
@@ -77,6 +86,15 @@ int main()
     {
         std::cerr << "Error writing to file." << std::endl;
     }
+
+    /*
+    Stop the timer
+    */
+   
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+
+    std::cout << "Runtime: " << duration.count() << " microseconds" << std::endl;
 
     return 0;
 }

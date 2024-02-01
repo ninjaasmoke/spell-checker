@@ -20,7 +20,7 @@ This C++ project implements a spell checker using the strategy pattern. The spel
 
 ```bash
 # compile the spell checker
-g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp
+g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 ```
 
 ```bash
