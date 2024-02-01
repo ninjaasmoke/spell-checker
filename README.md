@@ -6,5 +6,3 @@
     - [Introduction](#introduction)
 
 ### Introduction
-
-
