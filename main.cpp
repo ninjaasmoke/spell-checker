@@ -17,25 +17,25 @@ int main()
     const std::string inputFile = "data/sample.txt";
     const std::string outputFile = "fixed.txt";
 
-    // Read dictionary into a vector for lookup
+    // read dictionary into a vector for lookup
     std::vector<std::string> dictionary = FileIO::readLines(dictionaryFile);
 
-    // Instantiate the Levenshtein spell checker
+    // instantiate the Levenshtein spell checker
     LevenshteinSpellChecker spellChecker;
 
-    // Read lines from the input file
+    // read lines from the input file
     std::vector<std::string> lines = FileIO::readLines(inputFile);
 
-    // Correct spellings and update lines
+    // correct spellings and update lines
     for (auto &line : lines)
     {
         std::istringstream iss(line);
         std::string word;
-        std::ostringstream correctedLine; // New stringstream to store corrected line
+        std::ostringstream correctedLine; // new stringstream to store corrected line
 
         while (iss >> word)
         {
-            // Remove punctuation
+            // remove punctuation
             std::string cleanedWord = word;
             cleanedWord.erase(std::remove_if(cleanedWord.begin(), cleanedWord.end(), ::ispunct), cleanedWord.end());
 
@@ -47,10 +47,10 @@ int main()
                 word = "[" + word + "]";
             }
 
-            correctedLine << word << ' '; // Append the word to the corrected line
+            correctedLine << word << ' '; // append the word to the corrected line
         }
 
-        line = correctedLine.str(); // Update the original line with the corrected line
+        line = correctedLine.str(); // update the original line with the corrected line
     }
 
     bool writeSuccess = FileIO::writeLines(outputFile, lines);
