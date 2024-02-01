@@ -5,6 +5,7 @@
     - [Table of Contents](#table-of-contents)
     - [Introduction](#introduction)
     - [Exec commands](#exec-commands)
+    - [Outputs](#outputs)
     - [Learnings](#learnings)
       - [Understanding Strategy Pattern:](#understanding-strategy-pattern)
       - [Flexible Design with Patterns:](#flexible-design-with-patterns)
@@ -40,6 +41,33 @@ g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 # TODO
 # run the spell checker with a file and output the result to a file
 ./spell_checker <file> > <output_file>
+```
+### Outputs
+
+```bash
+Spell-checking complete. Corrected file written to: fixed.txt
+Runtime: 15870561 microseconds
+```
+
+```
+#dictionary file used: words.txt -> 4.75MB
+
+# input: sample.txt
+In twilight's glow, I adore applle's embrace and banaanas' dance.
+Oranges, a symphony of sunsets, are greaet!
+Grapes, peears, and cheries waltz in a delicious duet.
+Lemons and limmes serenade the senses with their sour song.
+Strawberries and blueberries, nature's jewels, are my favorite fruiits.
+I savor a watermellon's whisper and a kiwii's sweet refrain.
+
+# output: fixed.txt
+In twilight's glow, I adore [applle's] embrace and [banaanas'] dance. 
+Oranges, a symphony of sunsets, are [greaet!] 
+Grapes, [peears,] and cheries waltz in a delicious duet. 
+Lemons and [limmes] serenade the senses with their sour song. 
+Strawberries and blueberries, nature's jewels, are my favorite [fruiits.] 
+I savor a [watermellon's] whisper and a [kiwii's] sweet refrain. 
+
 ```
 
 ### Learnings
