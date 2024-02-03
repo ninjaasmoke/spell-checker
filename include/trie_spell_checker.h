@@ -12,7 +12,7 @@
 class TrieSpellChecker : public SpellCheckStrategy
 {
 private:
-    Trie dictionaryTrie;
+    mutable Trie dictionaryTrie;
 
 public:
     TrieSpellChecker();

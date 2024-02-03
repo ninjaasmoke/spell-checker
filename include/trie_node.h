@@ -17,6 +17,7 @@ public:
     void addChild(char c);
     void setEndOfWord(bool isEnd);
     bool isEndOfWord() const;
+    const std::unordered_map<char, TrieNode *> &getChildren() const;
 
 private:
     std::unordered_map<char, TrieNode *> children;
