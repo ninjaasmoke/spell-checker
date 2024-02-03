@@ -131,19 +131,21 @@ Overcame challenges and improved the implementation to achieve the desired funct
 
 - it is somehow worse than the levenshtein distance implementation
 - `mutable` and `const functions`
-  - `const` function: a function that does not modify the object's state
+  
+  `const` function: a function that does not modify the object's state
   ```
   // ex:
   int get_value() const {
     return value;
   }
   ```
-  - `mutable` keyword is used to modify the class member variables in a const function.
+  `mutable` keyword is used to modify the class member variables in a const function.
   ```
   // ex:
   mutable int value;
   ```
-  - now we can create a weird pattern where a method is `const` but it modifies the object's state
+  
+  now we can create a weird pattern where a method is `const` but it modifies the object's state
   ```
   // ex:
   class Trie {
@@ -154,4 +156,6 @@ Overcame challenges and improved the implementation to achieve the desired funct
     }
   }
   ```
-  - is this not a good practice?
+- is this a good practice? why even try `const-correctness` if we are going to use `mutable` anyways on the states we want to modify?
+- but this helped me implement the [TrieSpellChecker](./src/trie_spell_checker.cpp)'s `isSpelledCorrectly` method, while following the `const-correctness` of the `SpellChecker` interface ([concrete strategy](./include/spell_check_strategy.h)).
+- the `mutable` was added in the [TrieSpellChecker.h](./include/trie_spell_checker.h).
