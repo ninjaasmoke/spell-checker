@@ -16,6 +16,7 @@
       - [Iterative Development Approach:](#iterative-development-approach)
   - [Levenshtein Distance Implementation](#levenshtein-distance-implementation)
   - [Trie Data Structure Implementation](#trie-data-structure-implementation)
+  - [Mutable vs Const Correctness](#mutable-vs-const-correctness)
 
 ## Introduction
 Ever wondered how spell checkers work?
@@ -159,3 +160,36 @@ Overcame challenges and improved the implementation to achieve the desired funct
 - is this a good practice? why even try `const-correctness` if we are going to use `mutable` anyways on the states we want to modify?
 - but this helped me implement the [TrieSpellChecker](./src/trie_spell_checker.cpp)'s `isSpelledCorrectly` method, while following the `const-correctness` of the `SpellChecker` interface ([concrete strategy](./include/spell_check_strategy.h)).
 - the `mutable` was added in the [TrieSpellChecker.h](./include/trie_spell_checker.h).
+
+## Mutable vs Const Correctness
+
+```
+class Strategy {
+public:
+    virtual int execute() const = 0;
+};
+
+class CachedStrategy : public Strategy {
+public:
+    CachedStrategy() : cachedResult(0), isResultValid(false) {}
+
+    int execute() const override {
+        if (!isResultValid) {
+            // Compute and cache the result
+            cachedResult = computeResult();
+            isResultValid = true;
+        }
+        return cachedResult;
+    }
+
+private:
+    mutable int cachedResult;
+    mutable bool isResultValid;
+
+    int computeResult() const {
+        // expensive computation
+        return 42;
+    }
+};
+
+```
