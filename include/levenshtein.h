@@ -4,7 +4,6 @@
 #ifndef LEVENSHTEIN_H
 #define LEVENSHTEIN_H
 
-#pragma once
 
 #include <string>
 class LevenshteinDistance {

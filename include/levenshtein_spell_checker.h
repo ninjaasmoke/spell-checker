@@ -4,7 +4,6 @@
 #ifndef LEVENSHTEIN_SPELL_CHECKER_H
 #define LEVENSHTEIN_SPELL_CHECKER_H
 
-#pragma once
 #include <string>
 #include <vector>
 

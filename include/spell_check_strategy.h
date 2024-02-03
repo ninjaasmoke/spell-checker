@@ -4,7 +4,6 @@
 #ifndef SPELL_CHECK_STRATEGY_H
 #define SPELL_CHECK_STRATEGY_H
 
-#pragma once
 #include <string>
 #include <vector>
 

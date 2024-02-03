@@ -4,7 +4,6 @@
 #ifndef CUSTOM_LOGGER_H
 #define CUSTOM_LOGGER_H
 
-#pragma once
 
 #include <iostream>
 #include <string>
