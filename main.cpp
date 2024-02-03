@@ -11,6 +11,7 @@
 #include "./include/file_io.h"
 #include "./include/spell_check_strategy.h"
 #include "./include/levenshtein_spell_checker.h"
+#include "./include/trie_spell_checker.h"
 
 // Function to convert a string to lowercase
 std::string toLowercase(const std::string &s)
@@ -45,7 +46,8 @@ int main(int argc, char *argv[])
 
     // Instantiate the Levenshtein spell checker (initial strategy)
     LevenshteinSpellChecker levenshteinSpellChecker;
-    SpellCheckStrategy *currentStrategy = &levenshteinSpellChecker;
+    TrieSpellChecker trieSpellChecker;
+    SpellCheckStrategy *currentStrategy = &trieSpellChecker;
 
     // Check if the first argument is a string or a file path
     std::string firstArg;
