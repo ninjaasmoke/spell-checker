@@ -134,20 +134,20 @@ Overcame challenges and improved the implementation to achieve the desired funct
 - `mutable` and `const functions`
   
   `const` function: a function that does not modify the object's state
-  ```
+  ```cpp
   // ex:
   int get_value() const {
     return value;
   }
   ```
   `mutable` keyword is used to modify the class member variables in a const function.
-  ```
+  ```cpp
   // ex:
   mutable int value;
   ```
   
   now we can create a weird pattern where a method is `const` but it modifies the object's state
-  ```
+  ```cpp
   // ex:
   class Trie {
     mutable int value;
@@ -163,7 +163,7 @@ Overcame challenges and improved the implementation to achieve the desired funct
 
 ## Mutable vs Const Correctness
 
-```
+```cpp
 class Strategy {
 public:
     virtual int execute() const = 0;
