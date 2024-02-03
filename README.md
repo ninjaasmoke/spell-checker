@@ -14,6 +14,8 @@
       - [Modular Code Organization:](#modular-code-organization)
       - [Practical C++ Application:](#practical-c-application)
       - [Iterative Development Approach:](#iterative-development-approach)
+  - [Levenshtein Distance Implementation](#levenshtein-distance-implementation)
+  - [Trie Data Structure Implementation](#trie-data-structure-implementation)
 
 ## Introduction
 Ever wondered how spell checkers work?
@@ -119,3 +121,37 @@ Gained hands-on experience in file I/O, string manipulation, and algorithm integ
 
 Applied an iterative development process, refining the spell checker through testing and feedback.
 Overcame challenges and improved the implementation to achieve the desired functionality.
+
+## Levenshtein Distance Implementation
+
+- nothing actually new here, just a refresher on the algorithm and how to apply it for a spell checker!
+- good speed, better than expected for a naive implementation
+
+## Trie Data Structure Implementation
+
+- it is somehow worse than the levenshtein distance implementation
+- `mutable` and `const functions`
+  - `const` function: a function that does not modify the object's state
+  ```
+  // ex:
+  int get_value() const {
+    return value;
+  }
+  ```
+  - `mutable` keyword is used to modify the class member variables in a const function.
+  ```
+  // ex:
+  mutable int value;
+  ```
+  - now we can create a weird pattern where a method is `const` but it modifies the object's state
+  ```
+  // ex:
+  class Trie {
+    mutable int value;
+    int get_value() const {
+      value = 10;
+      return value;
+    }
+  }
+  ```
+  - is this not a good practice?
