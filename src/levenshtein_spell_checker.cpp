@@ -9,7 +9,7 @@ bool LevenshteinSpellChecker::isSpelledCorrectly(const std::string &word, int th
     LevenshteinDistance levenshtein;
     for (auto &dictWord : dictionary)
     {
-        if (levenshtein.calculate(word, dictWord) <= threshold - 1)
+        if (levenshtein.calculate(word, dictWord) <= threshold)
         {
             return true;
         }

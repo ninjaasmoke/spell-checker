@@ -31,10 +31,10 @@ int main(int argc, char *argv[])
     */
     auto start = std::chrono::high_resolution_clock::now();
 
-    const int threshold = 1; // Maximum Levenshtein distance for a word to be considered correct
+    const int threshold = 0; // Maximum Levenshtein distance for a word to be considered correct
 
     // Default file paths
-    const std::string defaultDictionaryFile = "data/words.txt";
+    const std::string defaultDictionaryFile = "data/dictionary.txt";
     const std::string defaultInputFile = "data/sample.txt";
     const std::string defaultOutputFile = "fixed.txt";
 

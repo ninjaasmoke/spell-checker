@@ -60,26 +60,22 @@ bool Trie::searchWithinDistanceHelper(const TrieNode *node, const std::string &w
 
     if (depth == word.length())
     {
-        return node->isEndOfWord();
+        return node->isEndOfWord() && cost <= maxDistance;
     }
 
-    for (const auto &pair : node->getChildren())
+    bool found = false;
+
+    for (auto &child : node->getChildren())
     {
-        char c = pair.first;
-        const TrieNode *child = pair.second;
-
-        int newCost = cost;
-
-        if (word[depth] != c)
+        if (child.first == word[depth])
         {
-            newCost++;
+            found |= searchWithinDistanceHelper(child.second, word, maxDistance, depth + 1, cost);
         }
-
-        if (searchWithinDistanceHelper(child, word, maxDistance, depth + 1, newCost))
+        else
         {
-            return true;
+            found |= searchWithinDistanceHelper(child.second, word, maxDistance, depth + 1, cost + 1);
         }
     }
 
-    return false;
+    return found;
 }
