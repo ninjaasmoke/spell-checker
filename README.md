@@ -7,6 +7,7 @@
   - [Exec commands](#exec-commands)
   - [Outputs](#outputs)
     - [Levenshtein Distance](#levenshtein-distance)
+    - [Trie Spell Checker](#trie-spell-checker)
   - [Learnings](#learnings)
       - [Understanding Strategy Pattern:](#understanding-strategy-pattern)
       - [Flexible Design with Patterns:](#flexible-design-with-patterns)
@@ -91,6 +92,25 @@ Corrected string: In twilight's glow, I adore [applle's] embrace and [banaanas']
 Runtime: 15533753 microseconds
 ```
 
+```bash
+./spell_checker        
+Spell-checking complete. Corrected file written to: fixed.txt
+
+Runtime: 17275530 microseconds
+```
+
+### Trie Spell Checker
+
+```bash
+spell-checker> ./spell_checker "In twilight's glow, I adore applle's embrace and banaanas' dance. Oranges, a symphony of sunsets, are greaet! Grapes, peears, and cheries waltz in a delicious duet. Lemons and limmes serenade the senses with their sour song. Strawberries and blueberries, nature's jewels, are my favorite fruiits. I savor a watermellon's whisper and a kiwii's sweet refrain.
+>> "
+
+Corrected string: In twilight's glow, I [adore] [applle's] embrace and [banaanas'] dance. Oranges, a symphony [of] sunsets, [are] [greaet!] Grapes, [peears,] and [cheries] waltz in a [delicious] duet. Lemons and [limmes] serenade the senses with their [sour] [song.] Strawberries and blueberries, nature's jewels, [are] [my] favorite [fruiits.] I savor a [watermellon's] whisper and a [kiwii's] [sweet] refrain. 
+
+Runtime: 5387747 microseconds
+```
+
+
 ## Learnings
 
 #### Understanding Strategy Pattern:
@@ -131,6 +151,9 @@ Overcame challenges and improved the implementation to achieve the desired funct
 ## Trie Data Structure Implementation
 
 - it is somehow worse than the levenshtein distance implementation
+- NOTE: i was wrong. The trie implementation is actually faster than the levenshtein distance implementation. i was not reusing the same dictionary, instead i was recheckeing the dictionary for each word and adding it to the trie. 
+- it is like 3 times faster: [see results](#trie-spell-checker).
+- but seems like it identifies some good words as incorrect too! need to fix this.
 - `mutable` and `const functions`
   
   `const` function: a function that does not modify the object's state
