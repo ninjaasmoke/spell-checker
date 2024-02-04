@@ -12,13 +12,16 @@
 class TrieSpellChecker : public SpellCheckStrategy
 {
 private:
-    mutable Trie dictionaryTrie;
+    Trie dictionaryTrie;
 
 public:
-    TrieSpellChecker();
+    using SpellCheckStrategy::SpellCheckStrategy;
+
+    TrieSpellChecker(const std::vector<std::string> &dictionary);
+
     ~TrieSpellChecker();
 
-    bool isSpelledCorrectly(const std::string &word, const std::vector<std::string> &dictionary, int maxDistance) const override;
+    bool isSpelledCorrectly(const std::string &word, int maxDistance) const override;
 };
 
 #endif // TRIE_SPELL_CHECKER_H

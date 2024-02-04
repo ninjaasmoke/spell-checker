@@ -45,8 +45,9 @@ int main(int argc, char *argv[])
     std::vector<std::string> dictionary = FileIO::readLines(dictionaryFile);
 
     // Instantiate the Levenshtein spell checker (initial strategy)
-    LevenshteinSpellChecker levenshteinSpellChecker;
-    TrieSpellChecker trieSpellChecker;
+    LevenshteinSpellChecker levenshteinSpellChecker = LevenshteinSpellChecker(dictionary);
+    TrieSpellChecker trieSpellChecker = TrieSpellChecker(dictionary);
+
     SpellCheckStrategy *currentStrategy = &trieSpellChecker;
 
     // Check if the first argument is a string or a file path
@@ -80,7 +81,7 @@ int main(int argc, char *argv[])
             std::transform(dictionary.begin(), dictionary.end(), dictionary.begin(), ::toLowercase);
 
             // Check if the word is spelled correctly using the current strategy
-            if (!currentStrategy->isSpelledCorrectly(cleanedLower, dictionary, 0))
+            if (!currentStrategy->isSpelledCorrectly(cleanedLower, 0))
             {
                 // Implement suggestions for corrections here: TODO
                 // Now, just marking the incorrect word with square brackets
@@ -115,7 +116,7 @@ int main(int argc, char *argv[])
                 std::transform(dictionary.begin(), dictionary.end(), dictionary.begin(), ::toLowercase);
 
                 // Check if the word is spelled correctly using the current strategy
-                if (!currentStrategy->isSpelledCorrectly(cleanedLower, dictionary, 0))
+                if (!currentStrategy->isSpelledCorrectly(cleanedLower, 0))
                 {
                     // Implement suggestions for corrections here: TODO
                     // Now, just marking the incorrect word with square brackets

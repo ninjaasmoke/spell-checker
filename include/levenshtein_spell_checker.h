@@ -16,7 +16,8 @@ private:
     LevenshteinDistance levenshtein;
 
 public:
-    bool isSpelledCorrectly(const std::string &word, const std::vector<std::string> &dictionary, int threshold) const override;
+    using SpellCheckStrategy::SpellCheckStrategy;
+    bool isSpelledCorrectly(const std::string &word, int threshold) const override;
 };
 
 #endif // !LEVENSHTEIN_SPELL_CHECKER_H

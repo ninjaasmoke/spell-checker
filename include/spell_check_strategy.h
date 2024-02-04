@@ -9,8 +9,13 @@
 
 class SpellCheckStrategy
 {
+protected:
+    const std::vector<std::string> &dictionary;
+
 public:
-    virtual bool isSpelledCorrectly(const std::string &word, const std::vector<std::string> &dictionary, int threshold) const = 0;
+    SpellCheckStrategy(const std::vector<std::string> &dictionary) : dictionary(dictionary) {}
+    
+    virtual bool isSpelledCorrectly(const std::string &word, int threshold) const = 0;
     virtual ~SpellCheckStrategy() = default;
 };
 
