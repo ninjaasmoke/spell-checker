@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
     */
     auto start = std::chrono::high_resolution_clock::now();
 
+    const int threshold = 1; // Maximum Levenshtein distance for a word to be considered correct
+
     // Default file paths
     const std::string defaultDictionaryFile = "data/words.txt";
     const std::string defaultInputFile = "data/sample.txt";
@@ -81,7 +83,7 @@ int main(int argc, char *argv[])
             std::transform(dictionary.begin(), dictionary.end(), dictionary.begin(), ::toLowercase);
 
             // Check if the word is spelled correctly using the current strategy
-            if (!currentStrategy->isSpelledCorrectly(cleanedLower, 0))
+            if (!currentStrategy->isSpelledCorrectly(cleanedLower, threshold))
             {
                 // Implement suggestions for corrections here: TODO
                 // Now, just marking the incorrect word with square brackets
@@ -116,7 +118,7 @@ int main(int argc, char *argv[])
                 std::transform(dictionary.begin(), dictionary.end(), dictionary.begin(), ::toLowercase);
 
                 // Check if the word is spelled correctly using the current strategy
-                if (!currentStrategy->isSpelledCorrectly(cleanedLower, 0))
+                if (!currentStrategy->isSpelledCorrectly(cleanedLower, threshold))
                 {
                     // Implement suggestions for corrections here: TODO
                     // Now, just marking the incorrect word with square brackets
