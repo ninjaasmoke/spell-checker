@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     const int threshold = 0; // Maximum Levenshtein distance for a word to be considered correct
 
     // Default file paths
-    const std::string defaultDictionaryFile = "data/dictionary.txt";
+    const std::string defaultDictionaryFile = "data/words.txt";
     const std::string defaultInputFile = "data/sample.txt";
     const std::string defaultOutputFile = "fixed.txt";
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     LevenshteinSpellChecker levenshteinSpellChecker = LevenshteinSpellChecker(dictionary);
     TrieSpellChecker trieSpellChecker = TrieSpellChecker(dictionary);
 
-    SpellCheckStrategy *currentStrategy = &trieSpellChecker;
+    SpellCheckStrategy *currentStrategy = &levenshteinSpellChecker;
 
     // Check if the first argument is a string or a file path
     std::string firstArg;

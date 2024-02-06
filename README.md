@@ -31,6 +31,13 @@ I actually found them quite fascinating, so I decided to build one myself. This 
 g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report
 ```
 
+
+```bash
+# compile the spell checker
+# 7 times faster execution
+g++ -std=c++11 -o spell_checker -Iinclude src/*.cpp main.cpp -ftime-report -O3
+```
+
 ```bash
 # run the spell checker
 ./spell_checker
